@@ -1,0 +1,64 @@
+import { Button } from "@/components/ui/button";
+import { Gamepad2, Zap, Trophy } from "lucide-react";
+
+interface WelcomeStepProps {
+  onNext: () => void;
+}
+
+export const WelcomeStep = ({ onNext }: WelcomeStepProps) => {
+  return (
+    <div className="text-center space-y-8 py-8">
+      <div className="flex justify-center mb-6">
+        <div className="relative">
+          <Gamepad2 className="w-24 h-24 text-primary animate-pulse-glow" />
+          <Zap className="w-8 h-8 text-accent absolute -top-2 -right-2 animate-bounce" />
+        </div>
+      </div>
+      
+      <div className="space-y-4">
+        <h1 className="text-5xl md:text-7xl font-bold text-gradient animate-fade-in uppercase tracking-wider">
+          Ready Player One
+        </h1>
+        <p className="text-xl md:text-2xl text-secondary font-mono">
+          HACKATHON 2025
+        </p>
+      </div>
+
+      <div className="space-y-3 text-muted-foreground max-w-2xl mx-auto">
+        <p className="text-lg">
+          Welcome to the ultimate gamified coding challenge
+        </p>
+        <p className="text-base font-mono">
+          {">"} Level up your skills<br />
+          {">"} Compete for glory<br />
+          {">"} Build the future
+        </p>
+      </div>
+
+      <div className="flex flex-wrap justify-center gap-6 pt-6">
+        <div className="flex items-center gap-2 px-4 py-2 border border-primary/30 rounded-lg bg-primary/5">
+          <Trophy className="w-5 h-5 text-accent" />
+          <span className="text-sm font-mono">$50K Prize Pool</span>
+        </div>
+        <div className="flex items-center gap-2 px-4 py-2 border border-secondary/30 rounded-lg bg-secondary/5">
+          <Zap className="w-5 h-5 text-secondary" />
+          <span className="text-sm font-mono">48 Hours</span>
+        </div>
+        <div className="flex items-center gap-2 px-4 py-2 border border-accent/30 rounded-lg bg-accent/5">
+          <Gamepad2 className="w-5 h-5 text-accent" />
+          <span className="text-sm font-mono">Epic Challenges</span>
+        </div>
+      </div>
+
+      <Button
+        onClick={onNext}
+        size="lg"
+        variant="cyber"
+        className="mt-8 group"
+      >
+        START MISSION
+        <Zap className="w-5 h-5 group-hover:animate-bounce" />
+      </Button>
+    </div>
+  );
+};
