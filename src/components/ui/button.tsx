@@ -9,14 +9,14 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90 glow-cyan",
-        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "border border-primary bg-transparent text-primary hover:bg-primary/10 border-glow",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80 glow-purple",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
+        default: "bg-primary text-white hover:bg-primary/90 glow-red font-bold",
+        destructive: "bg-destructive text-white hover:bg-destructive/90 glow-red",
+        outline: "border-2 border-white bg-transparent text-white hover:bg-white hover:text-black glow-cyan font-bold",
+        secondary: "bg-secondary text-white hover:bg-secondary/90 glow-purple font-bold",
+        ghost: "hover:bg-accent/20 hover:text-accent",
         link: "text-primary underline-offset-4 hover:underline",
-        cyber: "bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground glow-cyan font-bold uppercase tracking-wider",
-        neon: "bg-gradient-to-r from-primary via-secondary to-accent text-white hover:opacity-90 glow-pink font-bold",
+        cyber: "bg-transparent border-3 border-primary text-white hover:bg-primary hover:text-white glow-red font-bold uppercase tracking-widest text-base",
+        neon: "bg-gradient-to-r from-primary via-secondary to-accent text-white hover:opacity-90 glow-purple font-bold uppercase tracking-wide",
       },
       size: {
         default: "h-10 px-4 py-2",

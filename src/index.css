@@ -8,53 +8,56 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Cyberpunk Color Palette */
-    --background: 229 60% 8%;
-    --foreground: 189 100% 90%;
+    /* HIGH CONTRAST Cyberpunk Palette */
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
 
-    --card: 229 50% 12%;
-    --card-foreground: 189 100% 90%;
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 229 50% 12%;
-    --popover-foreground: 189 100% 90%;
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 189 100% 50%;
-    --primary-foreground: 229 60% 8%;
+    --primary: 0 100% 55%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 271 91% 65%;
-    --secondary-foreground: 189 100% 90%;
+    --secondary: 271 100% 60%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 229 40% 20%;
-    --muted-foreground: 189 50% 70%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 70%;
 
-    --accent: 300 100% 50%;
+    --accent: 189 100% 55%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 100% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 189 100% 50%;
-    --input: 229 40% 20%;
-    --ring: 189 100% 50%;
+    --border: 0 100% 55%;
+    --input: 0 0% 10%;
+    --ring: 0 100% 55%;
 
     --radius: 0.75rem;
 
-    /* Custom Design Tokens */
-    --neon-cyan: 189 100% 50%;
-    --neon-purple: 271 91% 65%;
-    --neon-pink: 300 100% 50%;
-    --neon-green: 120 100% 50%;
-    --deep-space: 229 60% 8%;
-    --dark-panel: 229 50% 12%;
+    /* Custom Design Tokens - ULTRA VIBRANT */
+    --neon-red: 0 100% 55%;
+    --neon-purple: 271 100% 60%;
+    --neon-cyan: 189 100% 55%;
+    --neon-pink: 320 100% 60%;
+    --neon-blue: 220 100% 60%;
+    --neon-white: 0 0% 100%;
+    --pure-black: 0 0% 0%;
+    --dark-panel: 0 0% 5%;
     
     /* Gradients */
-    --gradient-cyber: linear-gradient(135deg, hsl(var(--neon-cyan)) 0%, hsl(var(--neon-purple)) 50%, hsl(var(--neon-pink)) 100%);
-    --gradient-glow: linear-gradient(180deg, transparent 0%, hsl(var(--neon-cyan) / 0.1) 100%);
+    --gradient-cyber: linear-gradient(135deg, hsl(var(--neon-red)) 0%, hsl(var(--neon-purple)) 50%, hsl(var(--neon-cyan)) 100%);
+    --gradient-fire: linear-gradient(135deg, hsl(var(--neon-red)) 0%, hsl(var(--neon-pink)) 100%);
+    --gradient-ice: linear-gradient(135deg, hsl(var(--neon-cyan)) 0%, hsl(var(--neon-blue)) 100%);
     
-    /* Shadows */
-    --shadow-cyan: 0 0 20px hsl(var(--neon-cyan) / 0.5);
-    --shadow-purple: 0 0 30px hsl(var(--neon-purple) / 0.4);
-    --shadow-pink: 0 0 25px hsl(var(--neon-pink) / 0.3);
+    /* Shadows - INTENSE */
+    --shadow-red: 0 0 40px hsl(var(--neon-red) / 0.8), 0 0 80px hsl(var(--neon-red) / 0.4);
+    --shadow-purple: 0 0 40px hsl(var(--neon-purple) / 0.8), 0 0 80px hsl(var(--neon-purple) / 0.4);
+    --shadow-cyan: 0 0 40px hsl(var(--neon-cyan) / 0.8), 0 0 80px hsl(var(--neon-cyan) / 0.4);
     
     /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -69,10 +72,11 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
     background-image: 
-      linear-gradient(rgba(0, 240, 255, 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0, 240, 255, 0.03) 1px, transparent 1px);
+      linear-gradient(rgba(255, 0, 0, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 200, 255, 0.08) 1px, transparent 1px);
     background-size: 50px 50px;
     background-position: 0 0, 0 0;
+    background-color: hsl(var(--pure-black));
   }
 }
 
@@ -84,6 +88,10 @@ All colors MUST be HSL.
     background-clip: text;
   }
   
+  .glow-red {
+    box-shadow: var(--shadow-red);
+  }
+  
   .glow-cyan {
     box-shadow: var(--shadow-cyan);
   }
@@ -92,13 +100,9 @@ All colors MUST be HSL.
     box-shadow: var(--shadow-purple);
   }
   
-  .glow-pink {
-    box-shadow: var(--shadow-pink);
-  }
-  
   .border-glow {
-    border: 1px solid hsl(var(--neon-cyan));
-    box-shadow: 0 0 10px hsl(var(--neon-cyan) / 0.3), inset 0 0 10px hsl(var(--neon-cyan) / 0.1);
+    border: 2px solid hsl(var(--neon-red));
+    box-shadow: 0 0 20px hsl(var(--neon-red) / 0.6), inset 0 0 20px hsl(var(--neon-red) / 0.2);
   }
   
   .animate-glitch {
@@ -123,10 +127,10 @@ All colors MUST be HSL.
   
   @keyframes pulse-glow {
     0%, 100% {
-      box-shadow: 0 0 20px hsl(var(--neon-cyan) / 0.4);
+      box-shadow: 0 0 40px hsl(var(--neon-red) / 0.8), 0 0 80px hsl(var(--neon-red) / 0.4);
     }
     50% {
-      box-shadow: 0 0 40px hsl(var(--neon-cyan) / 0.8);
+      box-shadow: 0 0 60px hsl(var(--neon-red) / 1), 0 0 120px hsl(var(--neon-red) / 0.6);
     }
   }
 }

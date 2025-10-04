@@ -12,9 +12,9 @@ export const ProgressBar = ({ currentStep, totalSteps }: ProgressBarProps) => {
         <span className="text-sm text-muted-foreground font-mono">PROGRESS</span>
         <span className="text-sm text-primary font-mono font-bold">{Math.round(progress)}%</span>
       </div>
-      <div className="h-2 bg-muted rounded-full overflow-hidden">
+      <div className="h-3 bg-muted rounded-full overflow-hidden border border-white/20">
         <div
-          className="h-full bg-gradient-to-r from-primary via-secondary to-accent transition-all duration-500 ease-out glow-cyan"
+          className="h-full bg-gradient-to-r from-primary via-secondary to-accent transition-all duration-500 ease-out glow-red"
           style={{ width: `${progress}%` }}
         />
       </div>
@@ -22,8 +22,8 @@ export const ProgressBar = ({ currentStep, totalSteps }: ProgressBarProps) => {
         {Array.from({ length: totalSteps }).map((_, index) => (
           <div
             key={index}
-            className={`w-2 h-2 rounded-full transition-all duration-300 ${
-              index <= currentStep ? "bg-primary glow-cyan" : "bg-muted"
+            className={`w-3 h-3 rounded-full transition-all duration-300 border-2 ${
+              index <= currentStep ? "bg-primary border-white glow-red scale-125" : "bg-muted border-muted"
             }`}
           />
         ))}

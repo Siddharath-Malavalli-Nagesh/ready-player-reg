@@ -10,8 +10,8 @@ export const SuccessStep = ({ formData }: SuccessStepProps) => {
     <div className="text-center space-y-8 py-8 animate-fade-in">
       <div className="flex justify-center mb-6">
         <div className="relative">
-          <CheckCircle className="w-24 h-24 text-primary glow-cyan animate-pulse-glow" />
-          <Sparkles className="w-8 h-8 text-accent absolute -top-2 -right-2 animate-bounce" />
+          <CheckCircle className="w-24 h-24 text-primary glow-red animate-pulse-glow" />
+          <Sparkles className="w-8 h-8 text-accent glow-cyan absolute -top-2 -right-2 animate-bounce" />
         </div>
       </div>
 
@@ -25,43 +25,43 @@ export const SuccessStep = ({ formData }: SuccessStepProps) => {
       </div>
 
       <div className="max-w-lg mx-auto space-y-6">
-        <div className="p-6 border border-primary/30 rounded-lg bg-card/50 text-left">
-          <h3 className="text-lg font-bold text-primary mb-4 uppercase tracking-wide">Player Profile</h3>
+        <div className="p-6 border-2 border-primary rounded-lg bg-card/80 text-left glow-red">
+          <h3 className="text-lg font-bold text-white mb-4 uppercase tracking-wide">Player Profile</h3>
           <div className="space-y-3 font-mono text-sm">
             <div className="flex justify-between">
               <span className="text-muted-foreground">NAME:</span>
-              <span className="text-foreground font-bold">{formData.name}</span>
+              <span className="text-white font-bold">{formData.name}</span>
             </div>
             <div className="flex justify-between">
               <span className="text-muted-foreground">EMAIL:</span>
-              <span className="text-foreground">{formData.email}</span>
+              <span className="text-white">{formData.email}</span>
             </div>
             <div className="flex justify-between">
               <span className="text-muted-foreground">UNIVERSITY:</span>
-              <span className="text-foreground">{formData.university}</span>
+              <span className="text-white">{formData.university}</span>
             </div>
             <div className="flex justify-between">
               <span className="text-muted-foreground">TEAM:</span>
-              <span className="text-foreground font-bold">{formData.teamName}</span>
+              <span className="text-white font-bold">{formData.teamName}</span>
             </div>
             <div className="flex justify-between">
               <span className="text-muted-foreground">MEMBERS:</span>
-              <span className="text-foreground">{formData.teamSize}</span>
+              <span className="text-white">{formData.teamSize}</span>
             </div>
           </div>
         </div>
 
         <div className="space-y-4">
-          <div className="flex items-center gap-3 p-4 border border-secondary/30 rounded-lg bg-secondary/5">
-            <Mail className="w-5 h-5 text-secondary flex-shrink-0" />
-            <p className="text-sm text-muted-foreground text-left font-mono">
+          <div className="flex items-center gap-3 p-4 border-2 border-secondary rounded-lg bg-secondary/10 glow-purple">
+            <Mail className="w-5 h-5 text-white flex-shrink-0" />
+            <p className="text-sm text-white text-left font-mono">
               Check your email for confirmation and next steps
             </p>
           </div>
 
-          <div className="flex items-center gap-3 p-4 border border-accent/30 rounded-lg bg-accent/5">
-            <Trophy className="w-5 h-5 text-accent flex-shrink-0" />
-            <p className="text-sm text-muted-foreground text-left font-mono">
+          <div className="flex items-center gap-3 p-4 border-2 border-accent rounded-lg bg-accent/10 glow-cyan">
+            <Trophy className="w-5 h-5 text-white flex-shrink-0" />
+            <p className="text-sm text-white text-left font-mono">
               Join our Discord server to connect with other players
             </p>
           </div>

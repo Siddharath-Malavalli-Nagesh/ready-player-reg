@@ -10,8 +10,8 @@ export const WelcomeStep = ({ onNext }: WelcomeStepProps) => {
     <div className="text-center space-y-8 py-8">
       <div className="flex justify-center mb-6">
         <div className="relative">
-          <Gamepad2 className="w-24 h-24 text-primary animate-pulse-glow" />
-          <Zap className="w-8 h-8 text-accent absolute -top-2 -right-2 animate-bounce" />
+          <Gamepad2 className="w-24 h-24 text-primary glow-red animate-pulse-glow" />
+          <Zap className="w-8 h-8 text-accent glow-cyan absolute -top-2 -right-2 animate-bounce" />
         </div>
       </div>
       
@@ -36,17 +36,17 @@ export const WelcomeStep = ({ onNext }: WelcomeStepProps) => {
       </div>
 
       <div className="flex flex-wrap justify-center gap-6 pt-6">
-        <div className="flex items-center gap-2 px-4 py-2 border border-primary/30 rounded-lg bg-primary/5">
-          <Trophy className="w-5 h-5 text-accent" />
-          <span className="text-sm font-mono">$50K Prize Pool</span>
+        <div className="flex items-center gap-2 px-4 py-2 border-2 border-primary rounded-lg bg-primary/10 glow-red">
+          <Trophy className="w-5 h-5 text-white" />
+          <span className="text-sm font-mono text-white font-bold">$50K Prize Pool</span>
         </div>
-        <div className="flex items-center gap-2 px-4 py-2 border border-secondary/30 rounded-lg bg-secondary/5">
-          <Zap className="w-5 h-5 text-secondary" />
-          <span className="text-sm font-mono">48 Hours</span>
+        <div className="flex items-center gap-2 px-4 py-2 border-2 border-secondary rounded-lg bg-secondary/10 glow-purple">
+          <Zap className="w-5 h-5 text-white" />
+          <span className="text-sm font-mono text-white font-bold">48 Hours</span>
         </div>
-        <div className="flex items-center gap-2 px-4 py-2 border border-accent/30 rounded-lg bg-accent/5">
-          <Gamepad2 className="w-5 h-5 text-accent" />
-          <span className="text-sm font-mono">Epic Challenges</span>
+        <div className="flex items-center gap-2 px-4 py-2 border-2 border-accent rounded-lg bg-accent/10 glow-cyan">
+          <Gamepad2 className="w-5 h-5 text-white" />
+          <span className="text-sm font-mono text-white font-bold">Epic Challenges</span>
         </div>
       </div>
 

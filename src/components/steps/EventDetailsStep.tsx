@@ -17,34 +17,34 @@ export const EventDetailsStep = ({ onNext, onBack }: EventDetailsStepProps) => {
       </div>
 
       <div className="space-y-6 max-w-2xl mx-auto">
-        <div className="p-6 border border-primary/30 rounded-lg bg-card/50 hover:border-primary/60 transition-all duration-300 glow-cyan">
+        <div className="p-6 border-2 border-primary rounded-lg bg-card/80 hover:border-primary transition-all duration-300 glow-red">
           <div className="flex items-start gap-4">
             <Calendar className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
             <div>
-              <h3 className="text-xl font-bold text-primary mb-2">When</h3>
-              <p className="text-foreground font-mono">March 15-17, 2025</p>
+              <h3 className="text-xl font-bold text-white mb-2">When</h3>
+              <p className="text-white font-mono font-bold">March 15-17, 2025</p>
               <p className="text-muted-foreground text-sm mt-1">48 hours of non-stop hacking</p>
             </div>
           </div>
         </div>
 
-        <div className="p-6 border border-secondary/30 rounded-lg bg-card/50 hover:border-secondary/60 transition-all duration-300 glow-purple">
+        <div className="p-6 border-2 border-secondary rounded-lg bg-card/80 hover:border-secondary transition-all duration-300 glow-purple">
           <div className="flex items-start gap-4">
             <MapPin className="w-6 h-6 text-secondary mt-1 flex-shrink-0" />
             <div>
-              <h3 className="text-xl font-bold text-secondary mb-2">Where</h3>
-              <p className="text-foreground font-mono">Silicon Valley Innovation Hub</p>
+              <h3 className="text-xl font-bold text-white mb-2">Where</h3>
+              <p className="text-white font-mono font-bold">Silicon Valley Innovation Hub</p>
               <p className="text-muted-foreground text-sm mt-1">1234 Tech Drive, San Francisco, CA</p>
             </div>
           </div>
         </div>
 
-        <div className="p-6 border border-accent/30 rounded-lg bg-card/50 hover:border-accent/60 transition-all duration-300 glow-pink">
+        <div className="p-6 border-2 border-accent rounded-lg bg-card/80 hover:border-accent transition-all duration-300 glow-cyan">
           <div className="flex items-start gap-4">
             <Users className="w-6 h-6 text-accent mt-1 flex-shrink-0" />
             <div>
-              <h3 className="text-xl font-bold text-accent mb-2">Who</h3>
-              <p className="text-foreground font-mono">500+ Developers</p>
+              <h3 className="text-xl font-bold text-white mb-2">Who</h3>
+              <p className="text-white font-mono font-bold">500+ Developers</p>
               <p className="text-muted-foreground text-sm mt-1">Teams of 1-4 members</p>
             </div>
           </div>
