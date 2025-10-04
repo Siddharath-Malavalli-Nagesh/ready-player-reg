@@ -11,12 +11,19 @@ import { TeamStep } from "./steps/TeamStep";
 import { SuccessStep } from "./steps/SuccessStep";
 import { ProgressBar } from "./ProgressBar";
 
+export interface TeamMember {
+  name: string;
+  university: string;
+}
+
 export interface FormData {
   name: string;
   email: string;
   university: string;
   teamName: string;
   teamSize: string;
+  teamMembers: TeamMember[];
+  needTeamHelp: boolean;
 }
 
 const TOTAL_STEPS = 7;
@@ -29,6 +36,8 @@ export const RegistrationForm = () => {
     university: "",
     teamName: "",
     teamSize: "1",
+    teamMembers: [],
+    needTeamHelp: false,
   });
 
   const updateFormData = (data: Partial<FormData>) => {
