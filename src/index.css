@@ -158,7 +158,7 @@ All colors MUST be HSL.
   .bg-ready-player {
     background-image: 
       linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-      url('/Users/siddharath-malavalli-nagesh/ready-player-reg/src/img/readyplayerone.gif');
+      url('./img/readyplayerone.gif');
     @apply bg-cover bg-center bg-fixed;
   }
 }
