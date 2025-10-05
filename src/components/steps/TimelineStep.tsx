@@ -17,18 +17,24 @@ const timelineEvents: TimelineEvent[] = [
   {
     time: "09:00 AM",
     title: "Check-in & Registration",
-    description: "Get your badge and swag bag",
+    description: "Get your badge and swag bag.",
     color: "primary"
   },
   {
     time: "10:00 AM",
     title: "Opening Ceremony",
-    description: "Welcome speech & challenge reveal",
+    description: "Welcome speech & gamified challenge reveal (unique pick up chits for topics concept)",
     color: "secondary"
   },
   {
     time: "11:00 AM",
     title: "Hacking Begins",
+    description: "Start building your project",
+    color: "accent"
+  },
+  {
+    time: "12:00 PM",
+    title: "CHECKPOINT 1 - LANGFLOW/N8N SOUNDLESS WORKSHOP",
     description: "Start building your project",
     color: "accent"
   },
@@ -39,33 +45,45 @@ const timelineEvents: TimelineEvent[] = [
     color: "primary"
   },
   {
-    time: "06:00 PM",
-    title: "Workshop Session",
-    description: "Learn from industry experts",
+    time: "2:00 PM",
+    title: "CHECKPOINT 2 - OLLAMA SOUNDLESS WORKSHOP",
+    description: "Start building your project",
+    color: "accent"
+  },
+  {
+    time: "04:30 PM",
+    title: "DAY 1 WRAP-UP",
+    description: "Recap & announcements",
     color: "secondary"
   },
   {
-    time: "12:00 AM",
-    title: "Midnight Snacks",
+    time: "10:00 AM",
+    title: "HACKATHON ROUND 2 BEGINS",
     description: "Keep that energy up!",
     color: "accent"
   },
   {
-    time: "10:00 AM",
-    title: "Submissions Due",
+    time: "11:00 AM",
+    title: "CHECKPOINT 3 - FRONTEND INSTANCE SOUNDLESS WORKSHOP",
     description: "Final deadline for all projects",
     color: "primary"
   },
   {
-    time: "02:00 PM",
-    title: "Judging & Demos",
+    time: "03:30 PM",
+    title: "submission DEADLINE",
     description: "Show off your creation",
     color: "secondary"
   },
   {
-    time: "04:00 PM",
-    title: "Closing Ceremony",
-    description: "Winners announced!",
+    time: "04:30 PM",
+    title: "Pitching session begins",
+    description: "Present your project to the judges",
+    color: "accent"
+  },
+    {
+    time: "08:30 PM",
+    title: "Winners Announcement & Closing Ceremony",
+    description: "Celebrate the champions",
     color: "accent"
   }
 ];

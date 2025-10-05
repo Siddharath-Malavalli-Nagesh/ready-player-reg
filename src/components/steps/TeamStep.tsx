@@ -186,37 +186,50 @@ export const TeamStep = ({ formData, updateFormData, onNext, onBack }: TeamStepP
                 </div>
 
                 {/* Other Team Members */}
-                {formData.teamMembers.map((member, index) => (
-                  <div key={index} className="p-4 border-2 border-accent/30 rounded-lg bg-background/30">
-                    <div className="flex items-center gap-2 mb-3">
-                      <span className="font-mono text-accent font-bold">MEMBER {index + 2}</span>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div>
-                        <label className="text-xs font-mono text-muted-foreground uppercase">Name *</label>
-                        <Input
-                          type="text"
-                          value={member.name}
-                          onChange={(e) => updateTeamMember(index, "name", e.target.value)}
-                          placeholder={`Team member ${index + 2} name`}
-                          required
-                          className="text-sm"
-                        />
-                      </div>
-                      <div>
-                        <label className="text-xs font-mono text-muted-foreground uppercase">University *</label>
-                        <Input
-                          type="text"
-                          value={member.university}
-                          onChange={(e) => updateTeamMember(index, "university", e.target.value)}
-                          placeholder={`University name`}
-                          required
-                          className="text-sm"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                ))}
+{formData.teamMembers.map((member, index) => (
+  <div key={index} className="space-y-4 p-4 border border-muted rounded-lg bg-muted/20">
+    <div className="flex items-center gap-2">
+      <UserPlus className="h-5 w-5 text-accent" />
+      <span className="font-mono font-bold text-lg">MEMBER {index + 2}</span>
+    </div>
+    
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div>
+        <label className="block text-sm font-medium mb-2">Name *</label>
+        <Input
+          value={member.name}
+          onChange={(e) => updateTeamMember(index, "name", e.target.value)}
+          placeholder={`Team member ${index + 2} name`}
+          required
+          className="text-sm"
+        />
+      </div>
+      
+      <div>
+        <label className="block text-sm font-medium mb-2">Email</label>
+        <Input
+          type="email"
+          value={member.email || ""}
+          onChange={(e) => updateTeamMember(index, "email", e.target.value)}
+          placeholder={`member${index + 2}@university.edu`}
+          className="text-sm"
+        />
+      </div>
+    </div>
+    
+    <div>
+      <label className="block text-sm font-medium mb-2">University *</label>
+      <Input
+        value={member.university}
+        onChange={(e) => updateTeamMember(index, "university", e.target.value)}
+        placeholder="University name"
+        required
+        className="text-sm"
+      />
+    </div>
+  </div>
+))}
+
               </div>
             )}
 

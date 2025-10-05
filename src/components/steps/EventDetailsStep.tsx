@@ -22,7 +22,7 @@ export const EventDetailsStep = ({ onNext, onBack }: EventDetailsStepProps) => {
             <Calendar className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
             <div>
               <h3 className="text-xl font-bold text-white mb-2">When</h3>
-              <p className="text-white font-mono font-bold">March 15-17, 2025</p>
+              <p className="text-white font-mono font-bold">November 3-4, 2025</p>
               <p className="text-muted-foreground text-sm mt-1">48 hours of non-stop hacking</p>
             </div>
           </div>
@@ -33,8 +33,8 @@ export const EventDetailsStep = ({ onNext, onBack }: EventDetailsStepProps) => {
             <MapPin className="w-6 h-6 text-secondary mt-1 flex-shrink-0" />
             <div>
               <h3 className="text-xl font-bold text-white mb-2">Where</h3>
-              <p className="text-white font-mono font-bold">Silicon Valley Innovation Hub</p>
-              <p className="text-muted-foreground text-sm mt-1">1234 Tech Drive, San Francisco, CA</p>
+              <p className="text-white font-mono font-bold">BITS PILANI DUBAI CAMPUS</p>
+              <p className="text-muted-foreground text-sm mt-1">ACADEMIC CITY, DUBAI</p>
             </div>
           </div>
         </div>
@@ -44,7 +44,7 @@ export const EventDetailsStep = ({ onNext, onBack }: EventDetailsStepProps) => {
             <Users className="w-6 h-6 text-accent mt-1 flex-shrink-0" />
             <div>
               <h3 className="text-xl font-bold text-white mb-2">Who</h3>
-              <p className="text-white font-mono font-bold">500+ Developers</p>
+              <p className="text-white font-mono font-bold">250+ Developers</p>
               <p className="text-muted-foreground text-sm mt-1">Teams of 1-4 members</p>
             </div>
           </div>

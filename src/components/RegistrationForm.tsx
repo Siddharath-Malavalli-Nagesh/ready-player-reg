@@ -13,8 +13,10 @@ import { ProgressBar } from "./ProgressBar";
 
 export interface TeamMember {
   name: string;
-  university: string;
+  university?: string;
+  email?: string;
 }
+
 
 export interface FormData {
   name: string;
@@ -26,6 +28,20 @@ export interface FormData {
   needTeamHelp: boolean;
 }
 
+
+export interface FirestoreFormData {
+  "Full Name": string;
+  "Email Address": string;
+  "University / College Name": string;
+  "Team Name": string;
+  "Team Size": number;
+  "Member 2 Name"?: string;
+  "Member 2 Email"?: string;
+  "Member 3 Name"?: string;
+  "Member 3 Email"?: string;
+  "Member 4 Name"?: string;
+  "Member 4 Email"?: string;
+}
 const TOTAL_STEPS = 7;
 
 export const RegistrationForm = () => {
