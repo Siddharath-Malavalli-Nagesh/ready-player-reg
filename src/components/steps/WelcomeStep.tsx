@@ -37,15 +37,12 @@ export const WelcomeStep = ({ onNext }: WelcomeStepProps) => {
 
       <div className="flex flex-wrap justify-center gap-6 pt-6">
         <div className="flex items-center gap-2 px-4 py-2 border-2 border-primary rounded-lg bg-primary/10 glow-red">
-          <Trophy className="w-5 h-5 text-white" />
           <span className="text-sm font-mono text-white font-bold">AED5K Prize Pool</span>
         </div>
         <div className="flex items-center gap-2 px-4 py-2 border-2 border-secondary rounded-lg bg-secondary/10 glow-purple">
-          <Zap className="w-5 h-5 text-white" />
           <span className="text-sm font-mono text-white font-bold">48 Hours</span>
         </div>
         <div className="flex items-center gap-2 px-4 py-2 border-2 border-accent rounded-lg bg-accent/10 glow-cyan">
-          <Gamepad2 className="w-5 h-5 text-white" />
           <span className="text-sm font-mono text-white font-bold">Epic Challenges</span>
         </div>
       </div>

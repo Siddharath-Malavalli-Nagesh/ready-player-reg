@@ -69,14 +69,34 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
   body {
     @apply bg-background text-foreground;
+    /* Ready Player One GIF Background with Black Overlay */
     background-image: 
+      linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+      url('/Users/siddharath-malavalli-nagesh/ready-player-reg/src/img/readyplayerone.gif'),
       linear-gradient(rgba(255, 0, 0, 0.08) 1px, transparent 1px),
       linear-gradient(90deg, rgba(0, 200, 255, 0.08) 1px, transparent 1px);
-    background-size: 50px 50px;
-    background-position: 0 0, 0 0;
+    background-size: 
+      cover,
+      cover,
+      50px 50px,
+      50px 50px;
+    background-position: 
+      center center,
+      center center,
+      0 0,
+      0 0;
+    background-repeat: no-repeat, no-repeat, repeat, repeat;
+    background-attachment: fixed, fixed, local, local;
     background-color: hsl(var(--pure-black));
+    min-height: 100vh;
   }
 }
 
@@ -133,14 +153,12 @@ All colors MUST be HSL.
       box-shadow: 0 0 60px hsl(var(--neon-red) / 1), 0 0 120px hsl(var(--neon-red) / 0.6);
     }
   }
-}
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-
-  body {
-    @apply bg-background text-foreground;
+  /* Custom utility for Ready Player One themed elements */
+  .bg-ready-player {
+    background-image: 
+      linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+      url('/Users/siddharath-malavalli-nagesh/ready-player-reg/src/img/readyplayerone.gif');
+    @apply bg-cover bg-center bg-fixed;
   }
 }
