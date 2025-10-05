@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { CheckCircle, Sparkles, Trophy, Mail, Loader2 } from "lucide-react";
 import { FormData } from "../RegistrationForm";
-import { saveRegistrationData } from "/Users/siddharath-malavalli-nagesh/ready-player-reg/database.ts";
+import { saveRegistrationData } from "../../../database.ts";
 
 interface SuccessStepProps {
   formData: FormData;
