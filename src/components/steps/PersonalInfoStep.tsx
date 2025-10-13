@@ -10,7 +10,12 @@ interface PersonalInfoStepProps {
   onBack: () => void;
 }
 
-export const PersonalInfoStep = ({ formData, updateFormData, onNext, onBack }: PersonalInfoStepProps) => {
+export const PersonalInfoStep = ({
+  formData,
+  updateFormData,
+  onNext,
+  onBack,
+}: PersonalInfoStepProps) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (formData.name && formData.email) {
@@ -24,7 +29,9 @@ export const PersonalInfoStep = ({ formData, updateFormData, onNext, onBack }: P
         <h2 className="text-4xl font-bold text-gradient uppercase tracking-wide">
           Player Identity
         </h2>
-        <p className="text-muted-foreground font-mono">{">"} ENTER YOUR CREDENTIALS</p>
+        <p className="text-muted-foreground font-mono">
+          {">"} ENTER YOUR CREDENTIALS
+        </p>
       </div>
 
       <div className="max-w-md mx-auto space-y-6">
@@ -41,7 +48,9 @@ export const PersonalInfoStep = ({ formData, updateFormData, onNext, onBack }: P
             required
             className="text-base"
           />
-          <p className="text-xs text-muted-foreground font-mono">{">"} As it appears on official documents</p>
+          <p className="text-xs text-muted-foreground font-mono">
+            {">"} As it appears on official documents
+          </p>
         </div>
 
         <div className="space-y-3">
@@ -57,22 +66,37 @@ export const PersonalInfoStep = ({ formData, updateFormData, onNext, onBack }: P
             required
             className="text-base"
           />
-          <p className="text-xs text-muted-foreground font-mono">{">"} We'll send important updates here</p>
+          <p className="text-xs text-muted-foreground font-mono">
+            {">"} We'll send important updates here
+          </p>
         </div>
 
         <div className="p-4 border border-accent/30 rounded-lg bg-accent/5">
           <p className="text-xs text-muted-foreground font-mono">
-            <span className="text-accent font-bold">⚡ PRO TIP:</span> Use your university email for verification benefits
+            <span className="text-accent font-bold">⚡ PRO TIP:</span> Use your
+            university email for verification benefits
           </p>
         </div>
       </div>
 
-      <div className="flex justify-between pt-6">
-        <Button onClick={onBack} type="button" variant="outline" size="lg">
+      <div className="flex flex-col-reverse sm:flex-row sm:justify-between gap-4 pt-6">
+        <Button
+          onClick={onBack}
+          type="button"
+          variant="outline"
+          size="lg"
+          className="w-full sm:w-auto"
+        >
           <ChevronLeft className="w-5 h-5" />
           BACK
         </Button>
-        <Button type="submit" variant="cyber" size="lg" disabled={!formData.name || !formData.email}>
+        <Button
+          type="submit"
+          variant="cyber"
+          size="lg"
+          disabled={!formData.name || !formData.email}
+          className="w-full sm:w-auto"
+        >
           CONTINUE
           <ChevronRight className="w-5 h-5" />
         </Button>

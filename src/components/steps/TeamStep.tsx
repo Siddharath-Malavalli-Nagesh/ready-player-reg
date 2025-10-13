@@ -1,7 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
-import { ChevronRight, ChevronLeft, Users, Shield, UserPlus } from "lucide-react";
+import {
+  ChevronRight,
+  ChevronLeft,
+  Users,
+  Shield,
+  UserPlus,
+} from "lucide-react";
 import { FormData, TeamMember } from "../RegistrationForm";
 
 interface TeamStepProps {
@@ -11,41 +17,48 @@ interface TeamStepProps {
   onBack: () => void;
 }
 
-export const TeamStep = ({ formData, updateFormData, onNext, onBack }: TeamStepProps) => {
+export const TeamStep = ({
+  formData,
+  updateFormData,
+  onNext,
+  onBack,
+}: TeamStepProps) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // If they need help, allow submission without team details
     if (formData.needTeamHelp) {
       onNext();
       return;
     }
-    
+
     // Validate team details
     if (!formData.teamName || !formData.teamSize) {
       return;
     }
-    
+
     // Validate team members (excluding the main registrant)
     const requiredMembers = parseInt(formData.teamSize) - 1;
     if (requiredMembers > 0) {
-      const validMembers = formData.teamMembers.filter(m => m.name && m.university).length;
+      const validMembers = formData.teamMembers.filter(
+        (m) => m.name && m.university
+      ).length;
       if (validMembers < requiredMembers) {
         return;
       }
     }
-    
+
     onNext();
   };
 
   const handleTeamSizeChange = (size: string) => {
     const newSize = parseInt(size);
     const currentMembers = formData.teamMembers || [];
-    
+
     // Adjust team members array based on size (excluding main registrant)
     const requiredMembers = newSize - 1;
     let newMembers = [...currentMembers];
-    
+
     if (requiredMembers > currentMembers.length) {
       // Add empty members
       for (let i = currentMembers.length; i < requiredMembers; i++) {
@@ -55,11 +68,15 @@ export const TeamStep = ({ formData, updateFormData, onNext, onBack }: TeamStepP
       // Remove excess members
       newMembers = newMembers.slice(0, requiredMembers);
     }
-    
+
     updateFormData({ teamSize: size, teamMembers: newMembers });
   };
 
-  const updateTeamMember = (index: number, field: keyof TeamMember, value: string) => {
+  const updateTeamMember = (
+    index: number,
+    field: keyof TeamMember,
+    value: string
+  ) => {
     const newMembers = [...(formData.teamMembers || [])];
     newMembers[index] = { ...newMembers[index], [field]: value };
     updateFormData({ teamMembers: newMembers });
@@ -75,7 +92,9 @@ export const TeamStep = ({ formData, updateFormData, onNext, onBack }: TeamStepP
         <h2 className="text-4xl font-bold text-gradient uppercase tracking-wide">
           Squad Formation
         </h2>
-        <p className="text-muted-foreground font-mono">{">"} ASSEMBLE YOUR TEAM</p>
+        <p className="text-muted-foreground font-mono">
+          {">"} ASSEMBLE YOUR TEAM
+        </p>
       </div>
 
       <div className="max-w-2xl mx-auto space-y-6">
@@ -85,7 +104,9 @@ export const TeamStep = ({ formData, updateFormData, onNext, onBack }: TeamStepP
             <Checkbox
               id="needTeamHelp"
               checked={formData.needTeamHelp}
-              onCheckedChange={(checked) => updateFormData({ needTeamHelp: checked as boolean })}
+              onCheckedChange={(checked) =>
+                updateFormData({ needTeamHelp: checked as boolean })
+              }
               className="mt-1"
             />
             <div className="space-y-2">
@@ -97,7 +118,8 @@ export const TeamStep = ({ formData, updateFormData, onNext, onBack }: TeamStepP
                 Help me find a team
               </label>
               <p className="text-xs text-muted-foreground font-mono">
-                {">"} Check this if you don't have a team yet and want us to help match you with other solo hackers
+                {">"} Check this if you don't have a team yet and want us to
+                help match you with other solo hackers
               </p>
             </div>
           </div>
@@ -119,7 +141,9 @@ export const TeamStep = ({ formData, updateFormData, onNext, onBack }: TeamStepP
                 required
                 className="text-base"
               />
-              <p className="text-xs text-muted-foreground font-mono">{">"} Make it memorable and unique</p>
+              <p className="text-xs text-muted-foreground font-mono">
+                {">"} Make it memorable and unique
+              </p>
             </div>
 
             {/* Team Size */}
@@ -144,7 +168,9 @@ export const TeamStep = ({ formData, updateFormData, onNext, onBack }: TeamStepP
                   </button>
                 ))}
               </div>
-              <p className="text-xs text-muted-foreground font-mono">{">"} Select total team members (1-4)</p>
+              <p className="text-xs text-muted-foreground font-mono">
+                {">"} Select total team members (1-4)
+              </p>
             </div>
 
             {/* Team Members Details */}
@@ -155,17 +181,22 @@ export const TeamStep = ({ formData, updateFormData, onNext, onBack }: TeamStepP
                   Team Members Info
                 </h3>
                 <p className="text-xs text-muted-foreground font-mono mb-4">
-                  {">"} You're registering for the entire team. Add details for all members below:
+                  {">"} You're registering for the entire team. Add details for
+                  all members below:
                 </p>
-                
+
                 {/* Main Registrant (You) */}
                 <div className="p-4 border-2 border-secondary/40 rounded-lg bg-background/50">
                   <div className="flex items-center gap-2 mb-3">
-                    <span className="font-mono text-secondary font-bold">MEMBER 1 (YOU)</span>
+                    <span className="font-mono text-secondary font-bold">
+                      MEMBER 1 (YOU)
+                    </span>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label className="text-xs font-mono text-muted-foreground uppercase">Name</label>
+                      <label className="text-xs font-mono text-muted-foreground uppercase">
+                        Name
+                      </label>
                       <Input
                         type="text"
                         value={formData.name}
@@ -174,7 +205,9 @@ export const TeamStep = ({ formData, updateFormData, onNext, onBack }: TeamStepP
                       />
                     </div>
                     <div>
-                      <label className="text-xs font-mono text-muted-foreground uppercase">University</label>
+                      <label className="text-xs font-mono text-muted-foreground uppercase">
+                        University
+                      </label>
                       <Input
                         type="text"
                         value={formData.university}
@@ -186,50 +219,66 @@ export const TeamStep = ({ formData, updateFormData, onNext, onBack }: TeamStepP
                 </div>
 
                 {/* Other Team Members */}
-{formData.teamMembers.map((member, index) => (
-  <div key={index} className="space-y-4 p-4 border border-muted rounded-lg bg-muted/20">
-    <div className="flex items-center gap-2">
-      <UserPlus className="h-5 w-5 text-accent" />
-      <span className="font-mono font-bold text-lg">MEMBER {index + 2}</span>
-    </div>
-    
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <div>
-        <label className="block text-sm font-medium mb-2">Name *</label>
-        <Input
-          value={member.name}
-          onChange={(e) => updateTeamMember(index, "name", e.target.value)}
-          placeholder={`Team member ${index + 2} name`}
-          required
-          className="text-sm"
-        />
-      </div>
-      
-      <div>
-        <label className="block text-sm font-medium mb-2">Email</label>
-        <Input
-          type="email"
-          value={member.email || ""}
-          onChange={(e) => updateTeamMember(index, "email", e.target.value)}
-          placeholder={`member${index + 2}@university.edu`}
-          className="text-sm"
-        />
-      </div>
-    </div>
-    
-    <div>
-      <label className="block text-sm font-medium mb-2">University *</label>
-      <Input
-        value={member.university}
-        onChange={(e) => updateTeamMember(index, "university", e.target.value)}
-        placeholder="University name"
-        required
-        className="text-sm"
-      />
-    </div>
-  </div>
-))}
+                {formData.teamMembers.map((member, index) => (
+                  <div
+                    key={index}
+                    className="space-y-4 p-4 border border-muted rounded-lg bg-muted/20"
+                  >
+                    <div className="flex items-center gap-2">
+                      <UserPlus className="h-5 w-5 text-accent" />
+                      <span className="font-mono font-bold text-lg">
+                        MEMBER {index + 2}
+                      </span>
+                    </div>
 
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-sm font-medium mb-2">
+                          Name *
+                        </label>
+                        <Input
+                          value={member.name}
+                          onChange={(e) =>
+                            updateTeamMember(index, "name", e.target.value)
+                          }
+                          placeholder={`Team member ${index + 2} name`}
+                          required
+                          className="text-sm"
+                        />
+                      </div>
+
+                      <div>
+                        <label className="block text-sm font-medium mb-2">
+                          Email
+                        </label>
+                        <Input
+                          type="email"
+                          value={member.email || ""}
+                          onChange={(e) =>
+                            updateTeamMember(index, "email", e.target.value)
+                          }
+                          placeholder={`member${index + 2}@university.edu`}
+                          className="text-sm"
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-medium mb-2">
+                        University *
+                      </label>
+                      <Input
+                        value={member.university}
+                        onChange={(e) =>
+                          updateTeamMember(index, "university", e.target.value)
+                        }
+                        placeholder="University name"
+                        required
+                        className="text-sm"
+                      />
+                    </div>
+                  </div>
+                ))}
               </div>
             )}
 
@@ -241,13 +290,16 @@ export const TeamStep = ({ formData, updateFormData, onNext, onBack }: TeamStepP
               </h3>
               <ul className="space-y-2 text-sm text-muted-foreground font-mono">
                 <li className="flex items-center gap-2">
-                  <span className="text-accent">▸</span> One person registers for the entire team
+                  <span className="text-accent">▸</span> One person registers
+                  for the entire team
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-accent">▸</span> Add all team member names and universities
+                  <span className="text-accent">▸</span> Add all team member
+                  names and universities
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-accent">▸</span> Solo hackers are welcome!
+                  <span className="text-accent">▸</span> Solo hackers are
+                  welcome!
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="text-accent">▸</span> Max 4 members per team
@@ -258,21 +310,29 @@ export const TeamStep = ({ formData, updateFormData, onNext, onBack }: TeamStepP
         )}
       </div>
 
-      <div className="flex justify-between pt-6">
-        <Button onClick={onBack} type="button" variant="outline" size="lg">
+      <div className="flex flex-col-reverse sm:flex-row sm:justify-between gap-4 pt-6">
+        <Button
+          onClick={onBack}
+          type="button"
+          variant="outline"
+          size="lg"
+          className="w-full sm:w-auto"
+        >
           <ChevronLeft className="w-5 h-5" />
           BACK
         </Button>
-        <Button 
-          type="submit" 
-          variant="neon" 
-          size="lg" 
+        <Button
+          type="submit"
+          variant="neon"
+          size="lg"
           disabled={
-            !formData.needTeamHelp && 
-            (!formData.teamName || 
-             !formData.teamSize || 
-             (needsTeamMembers && formData.teamMembers.some(m => !m.name || !m.university)))
+            !formData.needTeamHelp &&
+            (!formData.teamName ||
+              !formData.teamSize ||
+              (needsTeamMembers &&
+                formData.teamMembers.some((m) => !m.name || !m.university)))
           }
+          className="w-full sm:w-auto"
         >
           SUBMIT
           <ChevronRight className="w-5 h-5" />

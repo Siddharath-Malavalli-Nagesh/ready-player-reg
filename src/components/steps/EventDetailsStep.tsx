@@ -1,5 +1,11 @@
 import { Button } from "@/components/ui/button";
-import { ChevronRight, ChevronLeft, MapPin, Calendar, Users } from "lucide-react";
+import {
+  ChevronRight,
+  ChevronLeft,
+  MapPin,
+  Calendar,
+  Users,
+} from "lucide-react";
 
 interface EventDetailsStepProps {
   onNext: () => void;
@@ -13,7 +19,9 @@ export const EventDetailsStep = ({ onNext, onBack }: EventDetailsStepProps) => {
         <h2 className="text-4xl font-bold text-gradient uppercase tracking-wide">
           Event Details
         </h2>
-        <p className="text-muted-foreground font-mono">{">"} MISSION BRIEFING</p>
+        <p className="text-muted-foreground font-mono">
+          {">"} MISSION BRIEFING
+        </p>
       </div>
 
       <div className="space-y-6 max-w-2xl mx-auto">
@@ -22,8 +30,12 @@ export const EventDetailsStep = ({ onNext, onBack }: EventDetailsStepProps) => {
             <Calendar className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
             <div>
               <h3 className="text-xl font-bold text-white mb-2">When</h3>
-              <p className="text-white font-mono font-bold">November 3-4, 2025</p>
-              <p className="text-muted-foreground text-sm mt-1">48 hours of non-stop hacking</p>
+              <p className="text-white font-mono font-bold">
+                November 3-4, 2025
+              </p>
+              <p className="text-muted-foreground text-sm mt-1">
+                48 hours of non-stop hacking
+              </p>
             </div>
           </div>
         </div>
@@ -33,8 +45,12 @@ export const EventDetailsStep = ({ onNext, onBack }: EventDetailsStepProps) => {
             <MapPin className="w-6 h-6 text-secondary mt-1 flex-shrink-0" />
             <div>
               <h3 className="text-xl font-bold text-white mb-2">Where</h3>
-              <p className="text-white font-mono font-bold">BITS PILANI DUBAI CAMPUS</p>
-              <p className="text-muted-foreground text-sm mt-1">ACADEMIC CITY, DUBAI</p>
+              <p className="text-white font-mono font-bold">
+                BITS PILANI DUBAI CAMPUS
+              </p>
+              <p className="text-muted-foreground text-sm mt-1">
+                ACADEMIC CITY, DUBAI
+              </p>
             </div>
           </div>
         </div>
@@ -45,16 +61,21 @@ export const EventDetailsStep = ({ onNext, onBack }: EventDetailsStepProps) => {
             <div>
               <h3 className="text-xl font-bold text-white mb-2">Who</h3>
               <p className="text-white font-mono font-bold">250+ Developers</p>
-              <p className="text-muted-foreground text-sm mt-1">Teams of 1-4 members</p>
+              <p className="text-muted-foreground text-sm mt-1">
+                Teams of 1-4 members
+              </p>
             </div>
           </div>
         </div>
 
         <div className="p-6 border border-primary/20 rounded-lg bg-muted/30">
-          <h3 className="text-lg font-bold text-primary mb-3">What to Expect</h3>
+          <h3 className="text-lg font-bold text-primary mb-3">
+            What to Expect
+          </h3>
           <ul className="space-y-2 text-sm text-muted-foreground font-mono">
             <li className="flex items-center gap-2">
-              <span className="text-primary">▸</span> Workshops from industry leaders
+              <span className="text-primary">▸</span> Workshops from industry
+              leaders
             </li>
             <li className="flex items-center gap-2">
               <span className="text-secondary">▸</span> Mentorship sessions
@@ -69,12 +90,22 @@ export const EventDetailsStep = ({ onNext, onBack }: EventDetailsStepProps) => {
         </div>
       </div>
 
-      <div className="flex justify-between pt-6">
-        <Button onClick={onBack} variant="outline" size="lg">
+      <div className="flex flex-col-reverse sm:flex-row sm:justify-between gap-4 pt-6">
+        <Button
+          onClick={onBack}
+          variant="outline"
+          size="lg"
+          className="w-full sm:w-auto"
+        >
           <ChevronLeft className="w-5 h-5" />
           BACK
         </Button>
-        <Button onClick={onNext} variant="cyber" size="lg">
+        <Button
+          onClick={onNext}
+          variant="cyber"
+          size="lg"
+          className="w-full sm:w-auto"
+        >
           CONTINUE
           <ChevronRight className="w-5 h-5" />
         </Button>

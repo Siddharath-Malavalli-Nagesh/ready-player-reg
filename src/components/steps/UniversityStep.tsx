@@ -10,7 +10,12 @@ interface UniversityStepProps {
   onBack: () => void;
 }
 
-export const UniversityStep = ({ formData, updateFormData, onNext, onBack }: UniversityStepProps) => {
+export const UniversityStep = ({
+  formData,
+  updateFormData,
+  onNext,
+  onBack,
+}: UniversityStepProps) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (formData.university) {
@@ -24,7 +29,9 @@ export const UniversityStep = ({ formData, updateFormData, onNext, onBack }: Uni
         <h2 className="text-4xl font-bold text-gradient uppercase tracking-wide">
           Academic Base
         </h2>
-        <p className="text-muted-foreground font-mono">{">"} YOUR HOME INSTITUTION</p>
+        <p className="text-muted-foreground font-mono">
+          {">"} YOUR HOME INSTITUTION
+        </p>
       </div>
 
       <div className="max-w-md mx-auto space-y-6">
@@ -41,11 +48,15 @@ export const UniversityStep = ({ formData, updateFormData, onNext, onBack }: Uni
             required
             className="text-base"
           />
-          <p className="text-xs text-muted-foreground font-mono">{">"} Full official name preferred</p>
+          <p className="text-xs text-muted-foreground font-mono">
+            {">"} Full official name preferred
+          </p>
         </div>
 
         <div className="space-y-4 p-6 border border-secondary/30 rounded-lg bg-card/30">
-          <h3 className="text-sm font-bold text-secondary uppercase tracking-wide">University Perks</h3>
+          <h3 className="text-sm font-bold text-secondary uppercase tracking-wide">
+            University Perks
+          </h3>
           <ul className="space-y-2 text-sm text-muted-foreground font-mono">
             <li className="flex items-center gap-2">
               <span className="text-secondary">▸</span> Exclusive workshops
@@ -54,21 +65,35 @@ export const UniversityStep = ({ formData, updateFormData, onNext, onBack }: Uni
               <span className="text-secondary">▸</span> Alumni networking
             </li>
             <li className="flex items-center gap-2">
-              <span className="text-secondary">▸</span> University-specific prizes
+              <span className="text-secondary">▸</span> University-specific
+              prizes
             </li>
             <li className="flex items-center gap-2">
-              <span className="text-secondary">▸</span> Recruitment opportunities
+              <span className="text-secondary">▸</span> Recruitment
+              opportunities
             </li>
           </ul>
         </div>
       </div>
 
-      <div className="flex justify-between pt-6">
-        <Button onClick={onBack} type="button" variant="outline" size="lg">
+      <div className="flex flex-col-reverse sm:flex-row sm:justify-between gap-4 pt-6">
+        <Button
+          onClick={onBack}
+          type="button"
+          variant="outline"
+          size="lg"
+          className="w-full sm:w-auto"
+        >
           <ChevronLeft className="w-5 h-5" />
           BACK
         </Button>
-        <Button type="submit" variant="cyber" size="lg" disabled={!formData.university}>
+        <Button
+          type="submit"
+          variant="cyber"
+          size="lg"
+          disabled={!formData.university}
+          className="w-full sm:w-auto"
+        >
           CONTINUE
           <ChevronRight className="w-5 h-5" />
         </Button>
